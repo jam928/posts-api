@@ -1,0 +1,27 @@
+# data sources properties
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Spring boot actuator properties
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: httptrace,health,metrics
+  endpoint:
+    health:
+      show-details: always
+
